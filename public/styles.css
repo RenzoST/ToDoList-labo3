@@ -1,0 +1,636 @@
+:root {
+  --primary-color: #dcdcdc;
+  --secondary-color: #fcfaf8;
+  --tertiary-color: #dd4c41;
+  --quaternary-color: #fff0e5;
+  --text-color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Ancho de la scrollbar */
+  height: 8px; /* Altura de la scrollbar (para scroll horizontal) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a63730;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #dd4b4148; /* Color de la pista de la scrollbar */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--primary-color);
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.containerNav {
+  background-color: var(--secondary-color);
+  height: 50px;
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
+
+.nav {
+  position: fixed;
+  left: 0%; /* Posición inicial (fuera de la vista) */
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  z-index: 999;
+  transform: translateX(-100%); /* Inicialmente fuera de la vista */
+  transition: transform 0.5s ease-in-out;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.userCont ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userCont ul li {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+
+.optionsCont ul li {
+  padding-left: 20px;
+  border-radius: 30px;
+}
+
+.optionsNav a {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.optionsNav:hover {
+  background-color: var(--quaternary-color);
+}
+
+.optionsNav:hover h3 {
+  color: var(--tertiary-color);
+}
+
+.optionsNav a h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.proyectosCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proyectosCont h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4d4d4d;
+  height: 20px;
+}
+
+.proyectosCont ul {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+}
+
+.proyectosCont ul li {
+  padding: 0 0 5px 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.proyectItems a b {
+  color: var(--tertiary-color);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.bars {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  position: fixed;
+  background-image: url(./images/menu.png);
+  background-size: cover;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  transition: left 0.3s;
+  z-index: 2;
+}
+
+.bars-nav {
+  width: 35px;
+  height: 35px;
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  background-image: url(./images/menu.png);
+  background-size: cover;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+  z-index: 1000;
+}
+
+#menu-toggle:checked ~ .nav,
+.bars-nav {
+  display: block;
+}
+
+#menu-toggle:checked ~ .nav {
+  transform: translateX(0); /* Baja a la vista */
+}
+
+.sectionTask {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+
+.titleP {
+  width: 85%;
+  font-size: 26px;
+  font-weight: 800;
+  padding: 10px 0px;
+  margin: 0;
+}
+
+.seccionTarea {
+  width: 90%;
+  padding-left: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  border: var(--tertiary-color) 2px solid;
+  margin: 10px;
+}
+
+.seccionTarea ul {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 15px 0px;
+}
+
+.seccionTarea ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  border-bottom: 1px solid #b3b2b2;
+  font-size: 16px;
+  height: 40px;
+}
+
+.seccionTarea ul li h2 {
+  width: 90%;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--tertiary-color);
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+.custom-checkbox span {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.custom-checkbox input:checked + span {
+  background-color: #000;
+}
+
+.custom-checkbox span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+  display: none;
+}
+
+.custom-checkbox input:checked + span::after {
+  display: block;
+}
+
+.newTask {
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--tertiary-color);
+  margin-right: 10px;
+}
+
+.edit {
+  height: 20px;
+  width: 20px;
+  background-image: url(/public/images/lapiz.png);
+  background-size: cover;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--tertiary-color);
+  height: 50px;
+  width: 100vw;
+  margin-top: 20px;
+}
+
+footer p {
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav {
+    width: 50vw;
+  }
+
+  .userCont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .userCont ul {
+    width: 90%;
+  }
+
+  .userCont ul li {
+    font-size: 26px;
+    padding: 15px 20px;
+    font-weight: 600;
+  }
+
+  .optionsCont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .optionsCont ul {
+    width: 90%;
+  }
+
+  .optionsNav a h3 {
+    font-size: 24px;
+  }
+
+  .proyectosCont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .proyectosCont ul {
+    width: 90%;
+  }
+
+  .proyectosCont h3 {
+    font-size: 26px;
+  }
+
+  .proyectosCont ul li {
+    font-size: 24px;
+  }
+
+  .bars {
+    height: 40px;
+    width: 40px;
+  }
+
+  .bars-nav {
+    height: 40px;
+    width: 40px;
+  }
+
+  .sectionTask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sectionTask .seccionTarea {
+    width: 70%;
+    background-color: var(--secondary-color);
+    border-radius: 25px;
+    border: var(--tertiary-color) 2px solid;
+    margin: 10px;
+  }
+
+  .sectionTask .titleP {
+    width: 70%;
+    font-size: 32px;
+  }
+
+  .seccionTarea ul {
+    margin: 20px 0px;
+  }
+
+  .seccionTarea ul li {
+    font-size: 20px;
+  }
+
+  .seccionTarea ul li h2 {
+    font-size: 26px;
+  }
+
+  .edit {
+    height: 25px;
+    width: 25px;
+  }
+
+  footer {
+    margin-top: 20px;
+  }
+
+  footer p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .containerNav {
+    position: fixed;
+    height: 100vh;
+    width: 50px;
+  }
+
+  .nav {
+    width: 30vw;
+  }
+
+  .sectionTask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .sectionTask .seccionTarea {
+    width: 40%;
+    height: 350px;
+    background-color: var(--secondary-color);
+    border-radius: 25px;
+    border: var(--tertiary-color) 2px solid;
+    margin: 10px;
+  }
+
+  .sectionTask .titleP {
+    width: 100%;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .userCont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .userCont ul {
+    width: 90%;
+  }
+
+  .userCont ul li {
+    font-size: 26px;
+    padding: 15px 20px;
+    font-weight: 600;
+  }
+
+  .optionsCont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .optionsCont ul {
+    width: 90%;
+  }
+
+  .optionsNav a h3 {
+    font-size: 24px;
+  }
+
+  .proyectosCont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .proyectosCont ul {
+    width: 90%;
+  }
+
+  .proyectosCont h3 {
+    font-size: 26px;
+  }
+
+  .proyectosCont ul li {
+    font-size: 24px;
+  }
+
+  .bars {
+    height: 40px;
+    width: 40px;
+  }
+
+  .bars-nav {
+    height: 40px;
+    width: 40px;
+  }
+
+  .seccionTarea ul {
+    margin: 20px 0px;
+  }
+
+  .seccionTarea ul li {
+    font-size: 20px;
+  }
+
+  .seccionTarea ul li h2 {
+    font-size: 26px;
+  }
+
+  .edit {
+    height: 30px;
+    width: 30px;
+  }
+
+  footer {
+    margin-top: 25px;
+  }
+
+  footer p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .containerNav {
+    position: fixed;
+    height: 100vh;
+    width: 50px;
+  }
+
+  .nav {
+    width: 20vw;
+    display: block;
+  }
+
+  .sectionTask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .sectionTask .seccionTarea {
+    width: 35%;
+    height: 350px;
+    background-color: var(--secondary-color);
+    border-radius: 25px;
+    border: var(--tertiary-color) 2px solid;
+    margin: 10px;
+  }
+
+  .sectionTask .titleP {
+    width: 100%;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .userCont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .userCont ul {
+    width: 90%;
+  }
+
+  .userCont ul li {
+    font-size: 26px;
+    padding: 15px 20px;
+    font-weight: 600;
+  }
+
+  .optionsCont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .optionsCont ul {
+    width: 90%;
+  }
+
+  .optionsNav a h3 {
+    font-size: 24px;
+  }
+
+  .proyectosCont {
+    display: flex;
+    justify-content: center;
+  }
+
+  .proyectosCont ul {
+    width: 90%;
+  }
+
+  .proyectosCont h3 {
+    font-size: 26px;
+  }
+
+  .proyectosCont ul li {
+    font-size: 24px;
+  }
+
+  .bars {
+    height: 40px;
+    width: 40px;
+  }
+
+  .bars-nav {
+    height: 40px;
+    width: 40px;
+  }
+
+  .seccionTarea ul {
+    margin: 20px 0px;
+  }
+
+  .seccionTarea ul li {
+    font-size: 20px;
+  }
+
+  .seccionTarea ul li h2 {
+    font-size: 26px;
+  }
+
+  .edit {
+    height: 30px;
+    width: 30px;
+  }
+
+  footer {
+    margin-top: 30px;
+  }
+
+  footer p {
+    font-size: 18px;
+  }
+}

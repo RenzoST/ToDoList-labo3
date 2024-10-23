@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="public/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="containerNav">
+      <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+      <label for="menu-toggle" id="open" class="bars"></label>
+      <nav class="nav">
+        <div class="userCont">
+          <ul>
+            <li><span>🤓</span>Usuario</li>
+            <li>
+              <label for="menu-toggle" id="close" class="bars-nav"></label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="optionsCont">
+          <ul>
+            <li class="optionsNav">
+              <a href="#">
+                <span>➕</span>
+                <h3>Añadir Tarea</h3>
+              </a>
+            </li>
+            <li class="optionsNav">
+              <a href="#">
+                <span>🔍</span>
+                <h3>Buscar</h3>
+              </a>
+            </li>
+            <li class="optionsNav">
+              <a href="#hoy">
+                <span>📆</span>
+                <h3>Hoy</h3>
+              </a>
+            </li>
+            <li class="optionsNav">
+              <a href="#pendientes">
+                <span>📅</span>
+                <h3>Pendientes</h3>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="proyectosCont">
+          <ul>
+            <li class="proyectItems">
+              <h3>Tareas Personales</h3>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Fitness</a>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Trabajo</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="proyectosCont">
+          <ul>
+            <li class="proyectItems">
+              <h3>Equipo</h3>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Investigacion</a>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Desarrollo</a>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Agenda de reuniones</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="proyectosCont">
+          <ul>
+            <li class="proyectItems">
+              <h3>Compras</h3>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Comida</a>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Limpieza</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="proyectosCont">
+          <ul>
+            <li class="proyectItems">
+              <h3>Etudios</h3>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Estudiar</a>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Practica</a>
+            </li>
+            <li class="proyectItems">
+              <a href="#"><b>#</b> Practica</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="sectionTask">
+        <h1 id="hoy" class="titleP">HOY</h1>
+        <article class="seccionTarea">
+          <ul>
+            <li>
+              <h2>Tareas Personales</h2>
+              <a class="edit" href="#"></a>
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span> </label
+              >Trotar 45'
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span> </label
+              >Desarrollar App
+            </li>
+            <li><label for="" class="newTask">+</label> Añadir tarea</li>
+          </ul>
+        </article>
+        <article class="seccionTarea">
+          <ul>
+            <li>
+              <h2>Equipo</h2>
+              <a class="edit" href="#"></a>
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span> </label
+              >Planificar sesiones de investigacion de usuarios
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span> </label
+              >Enviar sugerencias sobre el diseño
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span> </label
+              >Reunion grupal
+            </li>
+            <li><label for="" class="newTask">+</label> Añadir tarea</li>
+          </ul>
+        </article>
+        <article class="seccionTarea">
+          <ul>
+            <li>
+              <h2>Compras</h2>
+              <a class="edit" href="#"></a>
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span> </label
+              >Comprar comida de la semana
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span> </label
+              >Comprar elementos de limpieza
+            </li>
+            <li>
+              <label for="" class="newTask">+</label><a href="">Añadir tarea</a>
+            </li>
+          </ul>
+        </article>
+        <article class="seccionTarea">
+          <ul>
+            <li>
+              <h2>Estudios</h2>
+              <a class="edit" href="#"></a>
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Estudiar para el examen de matematicas
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span
+              ></label>
+              Estudiar para el examen de cecci
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Estudiar para el examen de laboratorio
+            </li>
+            <li><label for="" class="newTask">+</label> Añadir tarea</li>
+          </ul>
+        </article>
+      </section>
+      <section class="sectionTask">
+        <h1 id="pendientes" class="titleP">Pendientes</h1>
+        <article class="seccionTarea">
+          <ul>
+            <li>
+              <h2>Tareas Personales</h2>
+              <a class="edit" href="#"></a>
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Preparar desayuno
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Ir al gimnasio
+            </li>
+            <li><label for="" class="newTask">+</label> Añadir tarea</li>
+          </ul>
+        </article>
+        <article class="seccionTarea">
+          <ul>
+            <li>
+              <h2>Equipo</h2>
+              <a class="edit" href="#"></a>
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Organizar reunión de seguimiento
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Revisar propuesta de diseño
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Preparar presentación para la próxima reunión
+            </li>
+            <li><label for="" class="newTask">+</label> Añadir tarea</li>
+          </ul>
+        </article>
+        <article class="seccionTarea">
+          <ul>
+            <li>
+              <h2>Compras</h2>
+              <a class="edit" href="#"></a>
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Comprar ingredientes para la cena
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Comprar productos de limpieza
+            </li>
+            <li>
+              <label for="" class="newTask">+</label><a href="">Añadir tarea</a>
+            </li>
+          </ul>
+        </article>
+        <article class="seccionTarea">
+          <ul>
+            <li>
+              <h2>Estudios</h2>
+              <a class="edit" href="#"></a>
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Estudiar para el examen de historia
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Practicar ejercicios de matemáticas
+            </li>
+            <li>
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+              Revisar notas de química
+            </li>
+            <li><label for="" class="newTask">+</label> Añadir tarea</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>© 2024 Todos los derechos reservados</p>
+    </footer>
+  </body>
+</html>
